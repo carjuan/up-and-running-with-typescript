@@ -28,3 +28,6 @@ const numStr: Array<string> = numbers.map((num: number): string => {
 });
 
 console.log(numStr);
+console.log(add(10, 10));
+console.log(sort<number>([5, 3, 1, 1], (a, b) => a - b));
+console.log(sort<string>(['5', '3', '2'], (a, b) => a.localeCompare(b)));

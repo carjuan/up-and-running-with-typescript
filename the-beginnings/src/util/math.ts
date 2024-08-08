@@ -10,3 +10,9 @@ export const sortListString = (strings: string[]): string[] => {
   return [...strings].sort((a, b) => a.localeCompare(b));
 };
 
+export function sort<Type>(
+  values: Array<Type>,
+  compare: (a: Type, b: Type) => number
+): Array<Type> {
+  return [...values].sort(compare);
+}
