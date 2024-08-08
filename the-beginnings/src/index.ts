@@ -1,3 +1,5 @@
+import { add, sortList, sort } from './util/math';
+
 const num: number = 4;
 
 function log(message: string): void {
