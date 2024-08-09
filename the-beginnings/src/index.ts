@@ -1,4 +1,5 @@
 import { add, sortList, sort } from './util/math';
+import { createPerson, person1 } from './util/objects';
 
 const num: number = 4;
 
