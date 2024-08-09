@@ -1,6 +1,7 @@
 import { add, sortList, sort } from './util/math';
 import { createPerson, person1 } from './util/objects';
 import fs from 'node:fs';
+import { Root, Child } from './types/reddit';
 
 fs.readFile('path', () => {});
 
@@ -35,3 +36,12 @@ console.log(numStr);
 console.log(add(10, 10));
 console.log(sort<number>([5, 3, 1, 1], (a, b) => a - b));
 console.log(sort<string>(['5', '3', '2'], (a, b) => a.localeCompare(b)));
+
+async function getRedditData() {
+  const response = await fetch('https://www.reddit.com/r/javascript.json');
+  console.log(response);
+  const json: Root = await response.json();
+  json.data.children.map((child: Child) => {
+    console.log(child.data.clicked);
+  });
+}
