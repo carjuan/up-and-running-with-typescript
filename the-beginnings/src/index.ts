@@ -1,5 +1,8 @@
 import { add, sortList, sort } from './util/math';
 import { createPerson, person1 } from './util/objects';
+import fs from 'node:fs';
+
+fs.readFile('path', () => {});
 
 const num: number = 4;
 
