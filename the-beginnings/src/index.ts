@@ -122,3 +122,16 @@ const phones: {
 // dot notation is used for known properties
 phones.mobile;
 
+// We know that this property 'aaaa' is not in phones dicitionary.
+// by adding in the index signature type | undefined, we tell typescript that this
+// value can be of type {country: string; area: string; number: string;} or undefined
+// If not undefined is passed to the index signature, noUncheckedIndexAccess is set to true,
+// typescript will set to that type or undefined.
+const y = phones['aaaa'];
+
+y && y.area;
+y?.area;
+if (y) {
+  y.area;
+}
+
