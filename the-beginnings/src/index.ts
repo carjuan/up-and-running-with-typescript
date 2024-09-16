@@ -147,5 +147,8 @@ const [year, make, model] = myCar2;
 // A better approach would be to have the exact tuple type
 let myCar3: [number, string, string] = [2002, 'Toyota', 'Corolla'];
 
+// Now TS knows the fixed value of myCar3!
+myCar3.length;
+
 // the following value will be the right type!
 const [year1, make1, model1] = myCar3;
