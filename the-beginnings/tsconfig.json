@@ -13,7 +13,8 @@
     "noImplicitAny": true /* Raise error on expressions and declarations with an implied 'any' type. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "removeComments": true,
-    "declaration": true
+    "declaration": true,
+    "noUncheckedIndexedAccess": true /* Disallow unchecked indexing into objects. */
   },
   "include": ["src"],
   "exclude": ["node_modules"]
