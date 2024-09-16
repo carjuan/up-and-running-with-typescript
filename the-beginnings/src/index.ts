@@ -135,3 +135,17 @@ if (y) {
   y.area;
 }
 
+// Tuples
+// TS will infer that this array could be of type 'string' or 'number'
+// however, we do not want that!
+let myCar2 = [2002, 'Toyota', 'Corolla'];
+
+// The following works but it has the wrong type
+// as its values could be of type 'string', 'number' or 'undefined'.
+const [year, make, model] = myCar2;
+
+// A better approach would be to have the exact tuple type
+let myCar3: [number, string, string] = [2002, 'Toyota', 'Corolla'];
+
+// the following value will be the right type!
+const [year1, make1, model1] = myCar3;
