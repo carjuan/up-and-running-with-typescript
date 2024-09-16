@@ -60,3 +60,24 @@ let car: {
   year: number;
 } = myCar;
 
+// Optional Properties
+function printCar(car?: {
+  make: string;
+  model: string;
+  year: number;
+  chargeVoltage?: number;
+}) {
+  // we have narrowed car to type car
+  if (!car) return;
+  let str = `${car.make} ${car.model} ${car.year}`;
+
+  // TypeGuards - Narrowing, specificity of type to get to number
+  // we have eliminated the positibility of undefined type
+  if (typeof car.chargeVoltage === 'number') {
+    str += `// ${car.chargeVoltage}v`;
+  }
+  console.log(`Car: ${car.make} ${car.model} ${car.year}`);
+}
+
+printCar(car);
+
