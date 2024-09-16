@@ -148,7 +148,10 @@ const [year, make, model] = myCar2;
 let myCar3: [number, string, string] = [2002, 'Toyota', 'Corolla'];
 
 // Now TS knows the fixed value of myCar3!
-myCar3.length;
+myCar3.length; // !pop, push methods will be available on this array as per TS
 
 // the following value will be the right type!
 const [year1, make1, model1] = myCar3;
+
+// Treat arrays as immutable structures by using readonly
+let myCar4: readonly [number, string, string] = [2002, 'Jeep', 'Cherokee'];
