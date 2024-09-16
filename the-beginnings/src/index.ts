@@ -94,3 +94,31 @@ printCar({
   color: 'RED', //! Error: extra field and there is no check for this property anywhere.
 });
 
+// Index Signature
+const x: { [k: string]: string } = {};
+
+x.foo = '7';
+
+// You can specify both explicit fields and index signatures
+const phones: {
+  mobile: {
+    country: string;
+    area: string;
+    number: string;
+  };
+  [k: string]:
+    | {
+        country: string;
+        area: string;
+        number: string;
+      }
+    | undefined;
+} = {
+  home: { country: '+1', area: '211', number: '652-4515' },
+  work: { country: '+1', area: '670', number: '752-5856' },
+  mobile: { country: '+1', area: '322', number: '525-4357' },
+};
+
+// dot notation is used for known properties
+phones.mobile;
+
