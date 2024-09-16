@@ -81,3 +81,16 @@ function printCar(car?: {
 
 printCar(car);
 
+// Excess property checking.
+// Are you using the extra field, if so where. If TypeScript
+// is not able to find where the field is being used, TypeScript will
+// error out!
+
+// Type inference of {make: string; model: string; year: number; color: string}
+printCar({
+  make: 'Toyota',
+  model: 'Corola',
+  year: 2010,
+  color: 'RED', //! Error: extra field and there is no check for this property anywhere.
+});
+
