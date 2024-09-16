@@ -45,3 +45,18 @@ async function getRedditData() {
     console.log(child.data.clicked);
   });
 }
+
+// -- Overview of objects types
+const myCar = {
+  make: 'Toyota',
+  model: 'Corolla',
+  year: 2002,
+  chargeVoltage: 220,
+};
+
+let car: {
+  make: string;
+  model: string;
+  year: number;
+} = myCar;
+
