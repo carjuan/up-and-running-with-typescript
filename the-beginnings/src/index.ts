@@ -160,3 +160,26 @@ const [year1, make1, model1] = myCar3;
 
 // Treat arrays as immutable structures by using readonly
 let myCar4: readonly [number, string, string] = [2002, 'Jeep', 'Cherokee'];
+
+// Understand Types vs Values
+// Tagged Unions
+interface Square {
+  kind: 'square';
+  width: number;
+}
+
+interface Rectangle {
+  kind: 'rectangle';
+  height: number;
+  width: number;
+}
+
+type Shape = Square | Rectangle;
+
+function calculateArea(shape: Shape): number {
+  if (shape.kind === 'rectangle') {
+    return shape.height * shape.width;
+  }
+  return shape.width * shape.width;
+}
+
