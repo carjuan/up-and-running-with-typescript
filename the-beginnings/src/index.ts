@@ -126,7 +126,12 @@ phones.mobile;
 // value can be of type {country: string; area: string; number: string;} or undefined
 // If not undefined is passed to the index signature, noUncheckedIndexAccess is set to true,
 // typescript will set to that type or undefined.
-const y = phones['aaaa'];
+const y = phones['fax'];
+
+const yu = [1, 2, 3, 4];
+if (yu[0]) {
+  // yeii we have yu[4] and available to access
+}
 
 y && y.area;
 y?.area;
