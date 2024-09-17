@@ -204,3 +204,32 @@ const success = [
   { name: 'John', email: 'email@gmail.com' },
 ] as const;
 
+const fail = ['error', new Error('something went wrong')] as const;
+
+function flipCoin(): 'tails' | 'heads' {
+  if (Math.random() > 0.5) return 'heads';
+  return 'tails';
+}
+
+function getUserInfo() {
+  if (flipCoin() === 'heads') return success;
+  return fail;
+}
+
+// Another case of discriminated unions
+const [message, handler] = getUserInfo();
+
+if (handler instanceof Error) {
+  console.log(handler.message);
+} else {
+  console.log(handler.email);
+}
+
+// Another way to handle the above case
+if (message !== 'success') {
+  // handler is type Error
+  console.log(handler.message);
+} else {
+  // handler is type {name: string, email: string}
+  handler.email;
+}
