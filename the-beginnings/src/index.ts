@@ -91,7 +91,6 @@ printCar({
   make: 'Toyota',
   model: 'Corola',
   year: 2010,
-  color: 'RED', //! Error: extra field and there is no check for this property anywhere.
 });
 
 // Index Signature
