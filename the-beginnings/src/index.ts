@@ -199,12 +199,20 @@ printEvenNumberUnderFive(z); // error if 'z' was union type. // Ok if it was int
 printNumber(z);
 
 // as const turns the type to a readonly tuple!
-const success = [
+
+// Let's model the type aliases
+type UserInfoOutcomeError = readonly ['error', Error];
+type UserInfoOutcomeSuccess = readonly [
+  'success',
+  { readonly name: string; readonly email: string },
+];
+
+const success: UserInfoOutcomeSuccess = [
   'success',
   { name: 'John', email: 'email@gmail.com' },
-] as const;
+];
 
-const fail = ['error', new Error('something went wrong')] as const;
+const fail: UserInfoOutcomeError = ['error', new Error('something went wrong')];
 
 function flipCoin(): 'tails' | 'heads' {
   if (Math.random() > 0.5) return 'heads';
