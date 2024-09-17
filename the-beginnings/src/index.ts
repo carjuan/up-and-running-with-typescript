@@ -198,3 +198,9 @@ printLowNumber(z); // error if 'z' was union type. // Ok if it was intersection
 printEvenNumberUnderFive(z); // error if 'z' was union type. // Ok if it was intersection
 printNumber(z);
 
+// as const turns the type to a readonly tuple!
+const success = [
+  'success',
+  { name: 'John', email: 'email@gmail.com' },
+] as const;
+
