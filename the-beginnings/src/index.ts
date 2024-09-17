@@ -183,3 +183,18 @@ function calculateArea(shape: Shape): number {
   return shape.width * shape.width;
 }
 
+type Evens = 2 | 4 | 6 | 8;
+type OneThroughFive = 1 | 2 | 3 | 4 | 5;
+
+// Type Assertion
+let z = 4 as Evens & OneThroughFive;
+function printEven(even: Evens): void {}
+function printLowNumber(lowNum: OneThroughFive): void {}
+function printEvenNumberUnderFive(num: OneThroughFive): void {}
+function printNumber(num: number): void {}
+
+printEven(z); // error if 'z' was union type. // Ok if it was intersection
+printLowNumber(z); // error if 'z' was union type. // Ok if it was intersection
+printEvenNumberUnderFive(z); // error if 'z' was union type. // Ok if it was intersection
+printNumber(z);
+
