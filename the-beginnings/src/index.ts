@@ -133,6 +133,7 @@ if (yu[0]) {
   // yeii we have yu[4] and available to access
 }
 
+// y is false
 y && y.area;
 y?.area;
 if (y) {
