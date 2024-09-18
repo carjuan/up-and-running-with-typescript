@@ -207,6 +207,8 @@ type UserInfoOutcomeSuccess = readonly [
   { readonly name: string; readonly email: string },
 ];
 
+type UserInfoOutcome = UserInfoOutcomeError | UserInfoOutcomeSuccess;
+
 const success: UserInfoOutcomeSuccess = [
   'success',
   { name: 'John', email: 'email@gmail.com' },
@@ -219,7 +221,7 @@ function flipCoin(): 'tails' | 'heads' {
   return 'tails';
 }
 
-function getUserInfo() {
+function getUserInfo(): UserInfoOutcome {
   if (flipCoin() === 'heads') return success;
   return fail;
 }
