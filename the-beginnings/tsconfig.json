@@ -15,8 +15,8 @@
     "removeComments": true,
     "declaration": true,
     "noUncheckedIndexedAccess": true /* makes indexing stricter*/,
-    "moduleDetection": "force",
-    "verbatimModuleSyntax": true
+    "moduleDetection": "force"
+    // "verbatimModuleSyntax": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]
