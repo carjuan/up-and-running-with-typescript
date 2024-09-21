@@ -271,4 +271,30 @@ class Dog implements Animal {
   bark() {
     return 'woof';
   }
+  eat() {
+    return 'eating';
+  }
 }
+
+interface CanBark {
+  bark(): void;
+  barkRapidly(): void;
+}
+
+interface ILivingOrganism {
+  isAlive(): void;
+}
+
+class LivingOrganism implements ILivingOrganism {
+  isAlive() {
+    return 'I am alive';
+  }
+}
+
+class Dog2 extends LivingOrganism implements Animal, CanBark {
+  bark() {}
+
+  barkRapidly() {}
+}
+
+console.log(new Dog().bark());
