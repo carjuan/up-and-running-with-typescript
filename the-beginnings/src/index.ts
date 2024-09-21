@@ -1,7 +1,7 @@
 import { add, sortList, sort } from './util/math';
 import { createPerson, person1 } from './util/objects';
 import fs from 'node:fs';
-import { Root, Child } from './types/reddit';
+import type { Root, Child } from './types/reddit';
 
 fs.readFile('path', () => {});
 
