@@ -242,3 +242,33 @@ if (message !== 'success') {
   // handler is type {name: string, email: string}
   handler.email;
 }
+
+// Interfaces
+// Definition and declarations on what behaviour
+// and/or properties this object might implement
+// They ARE not values, they are type declarations.
+interface Car {
+  start(): void;
+}
+
+interface Toyota extends Car {
+  turnOnRadio2(): void;
+}
+
+interface Jeep extends Car {
+  setUpTransmision(): void;
+}
+
+function setupCar(c: Jeep) {
+  // I got access to start and setUpTransmision
+}
+
+interface Animal {
+  bark(): void;
+}
+
+class Dog implements Animal {
+  bark() {
+    return 'woof';
+  }
+}
