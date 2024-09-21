@@ -31,7 +31,6 @@ if (typeof result === 'string') {
 const numStr: Array<string> = numbers.map((num: number): string => {
   return num.toString();
 });
-
 console.log(numStr);
 console.log(add(10, 10));
 console.log(sort<number>([5, 3, 1, 1], (a, b) => a - b));
