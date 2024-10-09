@@ -13,7 +13,6 @@
     "noImplicitAny": true /* Raise error on expressions and declarations with an implied 'any' type. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "removeComments": true,
-    "declaration": true,
     "noUncheckedIndexedAccess": true /* makes indexing stricter*/,
     "moduleDetection": "force"
     // "verbatimModuleSyntax": true
