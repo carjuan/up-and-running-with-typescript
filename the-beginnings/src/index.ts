@@ -244,7 +244,6 @@ if (message !== 'success') {
 }
 
 /* Extending a library or built-in language object */
-
 type DateDescriptions = Date & {
   getDateDescription(): string;
 };
@@ -298,16 +297,34 @@ interface ILivingOrganism {
   isAlive(): void;
 }
 
-class LivingOrganism implements ILivingOrganism {
+// interface LivingOrganism {
+//   isAlive(): void;
+// }
+
+// Classes can be interpreted as both as an interface (shape of an instance of a class) using
+// the keyword 'implements' or as a base class using the keyword 'extends'.
+// That is why 'implements is not complaining below'
+class LivingOrganism {
   isAlive() {
     return 'I am alive';
   }
 }
 
-class Dog2 extends LivingOrganism implements Animal, CanBark {
+class Dog2 implements LivingOrganism, Animal, CanBark {
   bark() {}
 
   barkRapidly() {}
+
+  isAlive() {
+    return 'I am somehow alive';
+  }
 }
 
-console.log(new Dog().bark());
+const dog2 = new Dog2();
+
+let proto = Object.getPrototypeOf(dog2);
+
+while (proto) {
+  console.dir(Object.getOwnPropertyNames(proto));
+  proto = Object.getPrototypeOf(proto);
+}
