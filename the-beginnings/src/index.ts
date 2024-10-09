@@ -243,6 +243,19 @@ if (message !== 'success') {
   handler.email;
 }
 
+/* Extending a library or built-in language object */
+
+type DateDescriptions = Date & {
+  getDateDescription(): string;
+};
+
+const dateWithDescriptions: DateDescriptions = Object.assign(new Date(), {
+  getDateDescription: () => {
+    return 'description of a date';
+  },
+});
+
+console.log(dateWithDescriptions.getFullYear());
 // Interfaces
 // Definition and declarations on what behaviour
 // and/or properties this object might implement
