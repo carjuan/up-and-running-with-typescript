@@ -328,3 +328,16 @@ while (proto) {
   console.dir(Object.getOwnPropertyNames(proto));
   proto = Object.getPrototypeOf(proto);
 }
+
+// Open interfaces
+// Augmenting existing types
+// *Uses Cases: Augmenting existing libraries
+// NOTE: Type alias are not open and cannot be 'extended' this way
+
+declare global {
+  interface Window {
+    numberOfTabs: number;
+  }
+}
+
+Promise;
