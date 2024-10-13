@@ -340,4 +340,19 @@ declare global {
   }
 }
 
-Promise;
+// Recursive Types
+// * Referencing the same type
+type NestedNumbers = number | NestedNumbers[];
+
+let nestedNumbers: NestedNumbers = [1, 2, 3, [3, 4, [7], 8], 10];
+
+if (typeof nestedNumbers !== 'number') {
+  nestedNumbers.push(41);
+  nestedNumbers.push([41, [66, 77], 99]);
+  nestedNumbers.push([[]]);
+  console.log(nestedNumbers);
+  // nestedNumbers.push('h'); // Error: type string is not assignable to parameter of type NestedNumbers
+  // NOTE: *Why would you do this? No idea, but it is possible
+  // as per out type definition.
+  nestedNumbers = 9;
+}
