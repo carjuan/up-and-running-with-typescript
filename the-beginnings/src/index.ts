@@ -418,3 +418,18 @@ async function main() {
 }
 
 main();
+
+// Indexed access type
+interface Car {
+  make: string;
+  model: string;
+  year: number;
+  color: {
+    red: string;
+    green: string;
+    blue: string;
+  };
+}
+
+let carColor: Car['color' | 'year'];
+let carColor2: Car['color']['green'];
