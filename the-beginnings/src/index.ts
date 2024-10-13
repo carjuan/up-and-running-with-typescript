@@ -388,3 +388,15 @@ isJSON(false);
 isJSON(true);
 isJSON(null);
 isJSON({ a: { b: [2, 3, 'foo'] } });
+
+// Type Queries
+// Obtain type information from values.
+// *Use case: What if a library does not expose its types in a way
+// that is the most functional to you? this is useful for extracting a type's keys
+
+type KeysOfThis = keyof { x: 'hello'; y: 'bye' }; // KeysOfThis = "x" | "y"
+
+// As an example, I will create a type that is a type of the string keys of Date
+type DateStringProps = keyof Date & string;
+
+let dateStringProps: DateStringProps = 'toDateString';
