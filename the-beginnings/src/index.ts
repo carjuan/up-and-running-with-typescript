@@ -400,3 +400,21 @@ type KeysOfThis = keyof { x: 'hello'; y: 'bye' }; // KeysOfThis = "x" | "y"
 type DateStringProps = keyof Date & string;
 
 let dateStringProps: DateStringProps = 'toDateString';
+
+// typeof operator
+
+async function main() {
+  const apiResponse = await Promise.all([
+    fetch('https://example.com'),
+    Promise.resolve('Resolve ASAP'),
+    Promise.resolve('Resolve ASAP'),
+  ]);
+
+  type APIResponse = typeof apiResponse;
+
+  let response: APIResponse = apiResponse;
+
+  // response: [Response, string, string]
+}
+
+main();
