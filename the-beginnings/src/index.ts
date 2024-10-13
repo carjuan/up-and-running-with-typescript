@@ -356,3 +356,35 @@ if (typeof nestedNumbers !== 'number') {
   // as per out type definition.
   nestedNumbers = 9;
 }
+
+// JSON Types
+// A JSON value MUST be an
+// - object
+// - array
+// - string,
+// - or one of the following three literal names:
+// - false
+// - true
+// - null
+//
+type JSONPrimitive = string | boolean | number | null;
+
+type JSONArray = JSONValue[];
+
+type JSONObject = {
+  [k: string]: JSONValue;
+};
+
+// JSONObject and JSONArray are recursive types
+type JSONValue = JSONPrimitive | JSONObject | JSONArray;
+
+function isJSON(arg: JSONValue) {}
+
+isJSON('hello');
+isJSON([4, 8, 15, 16, 23, 42]);
+isJSON([5, 6, [[6, 7, { hello: 'greeting' }]]]);
+isJSON({ greeting: 'hello' });
+isJSON(false);
+isJSON(true);
+isJSON(null);
+isJSON({ a: { b: [2, 3, 'foo'] } });
