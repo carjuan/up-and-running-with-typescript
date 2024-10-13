@@ -433,3 +433,11 @@ interface Car {
 
 let carColor: Car['color' | 'year'];
 let carColor2: Car['color']['green'];
+
+const contact = {
+  name: 'alex',
+  email: 'alex@gmail.com',
+};
+
+type Contact = keyof typeof contact;
+// Contact: 'name' | 'email'
